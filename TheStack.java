@@ -38,9 +38,12 @@ public class TheStack<E> {
 		return stackArray[topOfStack];
 	}
 
-	public E reverse(){
-		int middle = (topOfStack/2);
-		return stackArray[middle+1];
+	public void reverse(){
+		for (int i = 0; i < topOfStack/2; i++) {
+            E temp = stackArray[i];
+            stackArray[i] = stackArray[stackArray.length-(1+i)];
+            stackArray[stackArray.length-(1+i)] = temp;
+          }
 		
 	}
 	public static void main(String[] args) {
